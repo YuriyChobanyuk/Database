@@ -40,34 +40,34 @@ public class Person {
 	}
 
 	public void Initiate() {
-		Scanner scan = new Scanner(System.in);
+		Scanner scan1 = new Scanner(System.in);
 		System.out.println("Enter id");
-		setId(scan.nextInt());
-		System.out.println("Enter surname");
-		setSurname(scan.nextLine());
+		setId(scan1.nextInt());
 		System.out.println("Enter name");
-		setName(scan.nextLine());
+		setName(scan1.nextLine());
+		System.out.println("Enter surname");
+		setSurname(scan1.nextLine());	
 		System.out.println("Enter second name");
-		setSec_name(scan.nextLine());
+		setSec_name(scan1.nextLine());
 		System.out.println("Enter date of birth");
-		setBirth_date(scan.nextLine());
+		setBirth_date(scan1.nextLine());
 		System.out.println("Enter job");
-		setJob(scan.nextLine());
+		setJob(scan1.nextLine());
 		System.out.println("Enter filia");
-		setFilia(scan.nextLine());
+		setFilia(scan1.nextLine());
 		System.out.println("Enter room");
-		setRoom(scan.nextInt());
+		setRoom(scan1.nextInt());
 		System.out.println("Enter phone");
-		setPhone(scan.nextInt());
+		setPhone(scan1.nextInt());
 		System.out.println("Enter e-mail");
-		setE_mail(scan.nextLine());
+		setE_mail(scan1.nextLine());
 		System.out.println("Enter salary");
-		setSalary(scan.nextDouble());
+		setSalary(scan1.nextDouble());
 		System.out.println("Enter acception date");
-		setAcception(scan.nextLine());
+		setAcception(scan1.nextLine());
 		System.out.println("Enter addictions");
-		setAdds(scan.nextLine());
-		scan.close();
+		setAdds(scan1.nextLine());
+		scan1.close();
 	}
 
 	public int getId() {
@@ -108,7 +108,8 @@ public class Person {
 
 	public void setBirth_date(String birth_date) {
 		GregorianCalendar greg = new GregorianCalendar();
-		String [] dat = birth_date.split(".");
+		String [] dat = new String [3];
+		dat = birth_date.split(".");
 		greg.set(Integer.parseInt(dat[2]), Integer.parseInt(dat[1]), Integer.parseInt(dat[0]));
 		this.birth_date = greg.getTime();
 	}
@@ -167,7 +168,8 @@ public class Person {
 
 	public void setAcception(String acception) {
 		GregorianCalendar greg = new GregorianCalendar();
-		String [] dat = acception.split(".");
+		String [] dat = new String [3];
+		dat = acception.split(".");
 		greg.set(Integer.parseInt(dat[2]), Integer.parseInt(dat[1]), Integer.parseInt(dat[0]));
 		this.acception = greg.getTime();
 	}

@@ -19,6 +19,35 @@ public class Menu {
 		this.file = new File(filename);
 	}
 
+	public void StartMenu(){
+		int var;
+		Scanner scan = new Scanner(System.in);
+		do{
+			System.out.println("------- MENU -------");
+			System.out.println("1. Add person");
+			System.out.println("2. Show person");
+			System.out.println("3. Edit person");
+			System.out.println("4. Delete person");
+			System.out.println("0. Exit");
+			var = scan.nextInt();
+			switch (var){
+			case 1:
+				Add();
+				break;
+			case 2:
+				Show();
+				break;
+			case 3:
+				Edit();
+				break;
+			case 4:
+				Delete();
+				break;
+			}
+		}while(var != 0);
+		scan.close();
+	}
+	
 	public String[] SelectPers() {                                    // Функція вибору працівника
 		String[] field_mass = new String[13];                         // Маасив полів обєкта
 		ArrayList<String> var_list = new ArrayList<String>();         // Скорочений список працівників
@@ -215,7 +244,7 @@ public class Menu {
 		Deletation(Integer.parseInt(field_mass[0]));
 	}
 
-	public void Report(){
+	/*public void Report(){
 		int var;
 		String field;
 		ArrayList<String> base = new ArrayList<>();
@@ -318,7 +347,7 @@ public class Menu {
 		}
 	} while (var != 0);
 	scan.close();
-	}
+	}*/
 	
 	public File getFile() {
 		return file;
