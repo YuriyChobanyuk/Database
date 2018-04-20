@@ -29,7 +29,7 @@ public class Menu {
 			System.out.println("3. Edit person");
 			System.out.println("4. Delete person");
 			System.out.println("0. Exit");
-			var = scan.nextInt();
+			var = Integer.parseInt(scan.nextLine());
 			switch (var){
 			case 1:
 				Add();
@@ -79,17 +79,17 @@ public class Menu {
 	}
 
 	public void InitiateFromFile(String[] field_mass, Person pers) {  //Ініціалізує обєкт даними з файлу
-		pers.setId(Integer.parseInt(field_mass[0]));
+		pers.setId(field_mass[0]);
 		pers.setName(field_mass[1]);
 		pers.setSurname(field_mass[2]);
 		pers.setSec_name(field_mass[3]);
 		pers.setBirth_date(field_mass[4]);
 		pers.setJob(field_mass[5]);
 		pers.setFilia(field_mass[6]);
-		pers.setRoom(Integer.parseInt(field_mass[7]));
-		pers.setPhone(Integer.parseInt(field_mass[8]));
+		pers.setRoom(field_mass[7]);
+		pers.setPhone(field_mass[8]);
 		pers.setE_mail(field_mass[9]);
-		pers.setSalary(Double.parseDouble(field_mass[10]));
+		pers.setSalary(field_mass[10]);
 		pers.setAcception(field_mass[11]);
 		pers.setAdds(field_mass[12]);
 	}
@@ -143,7 +143,7 @@ public class Menu {
 			switch (var) {
 			case 1:
 				System.out.println("Enter new id");
-				pers.setId(scan.nextInt());
+				pers.setId(scan.nextLine());
 				break;
 
 			case 2:
@@ -173,11 +173,11 @@ public class Menu {
 				break;
 			case 8:
 				System.out.println("Enter new room");
-				pers.setRoom(scan.nextInt());
+				pers.setRoom(scan.nextLine());
 				break;
 			case 9:
 				System.out.println("Enter new phone");
-				pers.setPhone(scan.nextInt());
+				pers.setPhone(scan.nextLine());
 				break;
 			case 10:
 				System.out.println("Enter new e-mail");
@@ -185,7 +185,7 @@ public class Menu {
 				break;
 			case 11:
 				System.out.println("Enter new salary");
-				pers.setSalary(scan.nextDouble());
+				pers.setSalary(scan.nextLine());
 				break;
 			case 12:
 				System.out.println("Enter new date of acception");

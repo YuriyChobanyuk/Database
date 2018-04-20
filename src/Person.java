@@ -11,15 +11,15 @@ public class Person {
 	private Date birth_date;
 	private String job;
 	private String filia;
-	private int room;
-	private int phone;
+	private String room;
+	private String phone;
 	private String e_mail;
 	private double salary;
 	private Date acception;
 	private String adds;
 
 	public Person(int id, String surname, String name, String sec_name, Date birth_date, String job, String filia,
-			int room, int phone, String e_mail, double salary, Date acception, String adds) {
+			String room, String phone, String e_mail, double salary, Date acception, String adds) {
 		this.id = id;
 		this.surname = surname;
 		this.name = name;
@@ -42,7 +42,7 @@ public class Person {
 	public void Initiate() {
 		Scanner scan1 = new Scanner(System.in);
 		System.out.println("Enter id");
-		setId(scan1.nextInt());
+		setId(scan1.nextLine());
 		System.out.println("Enter name");
 		setName(scan1.nextLine());
 		System.out.println("Enter surname");
@@ -56,13 +56,13 @@ public class Person {
 		System.out.println("Enter filia");
 		setFilia(scan1.nextLine());
 		System.out.println("Enter room");
-		setRoom(scan1.nextInt());
+		setRoom(scan1.nextLine());
 		System.out.println("Enter phone");
-		setPhone(scan1.nextInt());
+		setPhone(scan1.nextLine());
 		System.out.println("Enter e-mail");
 		setE_mail(scan1.nextLine());
 		System.out.println("Enter salary");
-		setSalary(scan1.nextDouble());
+		setSalary(scan1.nextLine());
 		System.out.println("Enter acception date");
 		setAcception(scan1.nextLine());
 		System.out.println("Enter addictions");
@@ -74,8 +74,8 @@ public class Person {
 		return id;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setId(String id) {
+		this.id = Integer.parseInt(id);
 	}
 
 	public String getSurname() {
@@ -109,7 +109,7 @@ public class Person {
 	public void setBirth_date(String birth_date) {
 		GregorianCalendar greg = new GregorianCalendar();
 		String [] dat = new String [3];
-		dat = birth_date.split(".");
+		dat = birth_date.split("\\.");
 		greg.set(Integer.parseInt(dat[2]), Integer.parseInt(dat[1]), Integer.parseInt(dat[0]));
 		this.birth_date = greg.getTime();
 	}
@@ -130,19 +130,19 @@ public class Person {
 		this.filia = filia;
 	}
 
-	public int getRoom() {
+	public String getRoom() {
 		return room;
 	}
 
-	public void setRoom(int room) {
+	public void setRoom(String room) {
 		this.room = room;
 	}
 
-	public int getPhone() {
+	public String getPhone() {
 		return phone;
 	}
 
-	public void setPhone(int phone) {
+	public void setPhone(String phone) {
 		this.phone = phone;
 	}
 
@@ -158,8 +158,8 @@ public class Person {
 		return salary;
 	}
 
-	public void setSalary(double salary) {
-		this.salary = salary;
+	public void setSalary(String salary) {
+		this.salary = Double.parseDouble(salary);
 	}
 
 	public Date getAcception() {
@@ -168,8 +168,7 @@ public class Person {
 
 	public void setAcception(String acception) {
 		GregorianCalendar greg = new GregorianCalendar();
-		String [] dat = new String [3];
-		dat = acception.split(".");
+		String [] dat = acception.split("\\.");	
 		greg.set(Integer.parseInt(dat[2]), Integer.parseInt(dat[1]), Integer.parseInt(dat[0]));
 		this.acception = greg.getTime();
 	}
